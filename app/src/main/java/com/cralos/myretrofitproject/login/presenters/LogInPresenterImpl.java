@@ -1,6 +1,7 @@
 package com.cralos.myretrofitproject.login.presenters;
 
 import android.content.Context;
+import android.os.Handler;
 
 import com.cralos.myretrofitproject.login.interactors.LogInInteractorImpl;
 import com.cralos.myretrofitproject.login.interfaces.LogInInteractor;
@@ -18,10 +19,15 @@ public class LogInPresenterImpl implements LogInPresenter {
     }
 
     @Override
-    public void validateUserData(String email, String password) {
+    public void validateUserData(final String email, final String password) {
         if (view != null) {
             view.showLoader();
-            inInteractor.validateUserData(email, password);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    inInteractor.validateUserData(email, password);
+                }
+            }, 2000);
         }
     }
 
@@ -29,7 +35,6 @@ public class LogInPresenterImpl implements LogInPresenter {
     public void setMessage(String message) {
         if (view != null) {
             view.hideLoader();
-
             view.showMessage(message);
         }
     }
