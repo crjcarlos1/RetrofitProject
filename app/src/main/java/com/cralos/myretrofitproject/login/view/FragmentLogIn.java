@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.cralos.myretrofitproject.R;
 import com.cralos.myretrofitproject.components.Loader;
@@ -70,5 +72,7 @@ public class FragmentLogIn extends Fragment implements View.OnClickListener, Log
 
     @Override
     public void successLogIn() {
+        FragmentManager manager=getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction=manager.beginTransaction();
     }
 }
