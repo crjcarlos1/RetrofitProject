@@ -19,6 +19,7 @@ import com.cralos.myretrofitproject.components.Loader;
 import com.cralos.myretrofitproject.login.interfaces.LogInPresenter;
 import com.cralos.myretrofitproject.login.interfaces.LogInView;
 import com.cralos.myretrofitproject.login.presenters.LogInPresenterImpl;
+import com.cralos.myretrofitproject.menu.FragmentMenu;
 
 public class FragmentLogIn extends Fragment implements View.OnClickListener, LogInView {
     public static final String TAG = FragmentLogIn.class.getSimpleName();
@@ -72,7 +73,10 @@ public class FragmentLogIn extends Fragment implements View.OnClickListener, Log
 
     @Override
     public void successLogIn() {
-        FragmentManager manager=getActivity().getSupportFragmentManager();
-        FragmentTransaction transaction=manager.beginTransaction();
+        FragmentManager manager = getActivity().getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.addToBackStack(FragmentMenu.TAG);
+        transaction.replace(R.id.containerFragments, new FragmentMenu(), FragmentMenu.TAG).commit();
     }
+
 }

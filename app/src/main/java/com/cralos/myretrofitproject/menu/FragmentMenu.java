@@ -13,6 +13,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.cralos.myretrofitproject.R;
+import com.cralos.myretrofitproject.htppDelete.FragmentDelete;
+import com.cralos.myretrofitproject.httpGet.FragmentGet;
+import com.cralos.myretrofitproject.httpPost.FragmentPost;
+import com.cralos.myretrofitproject.httpPut.FragmentPut;
 
 public class FragmentMenu extends Fragment implements View.OnClickListener {
     public static final String TAG = FragmentMenu.class.getSimpleName();
@@ -61,15 +65,23 @@ public class FragmentMenu extends Fragment implements View.OnClickListener {
     }
 
     private void showFragmentDelete() {
+        transaction.addToBackStack(FragmentDelete.TAG);
+        transaction.replace(R.id.containerFragments, new FragmentDelete(), FragmentDelete.TAG).commit();
     }
 
     private void showFragmentPut() {
+        transaction.addToBackStack(FragmentPut.TAG);
+        transaction.replace(R.id.containerFragments, new FragmentPut(), FragmentPut.TAG).commit();
     }
 
     private void showFragmentPost() {
+        transaction.addToBackStack(FragmentPost.TAG);
+        transaction.replace(R.id.containerFragments, new FragmentPost(), FragmentPost.TAG).commit();
     }
 
     private void showFragmentGet() {
+        transaction.addToBackStack(FragmentGet.TAG);
+        transaction.replace(R.id.containerFragments, new FragmentGet(), FragmentGet.TAG).commit();
     }
 
 
