@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.cralos.myretrofitproject.R;
 import com.cralos.myretrofitproject.htppDelete.FragmentDelete;
 import com.cralos.myretrofitproject.httpGet.view.FragmentGet;
-import com.cralos.myretrofitproject.httpPost.FragmentPost;
+import com.cralos.myretrofitproject.httpPost.view.FragmentPost;
 import com.cralos.myretrofitproject.httpPut.FragmentPut;
 
 public class FragmentMenu extends Fragment implements View.OnClickListener {
