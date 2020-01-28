@@ -31,7 +31,7 @@ dependencies {
     implementation "com.airbnb.android:lottie:3.0.7"
 
     /*designed*/
-    implementation 'com.google.android.material:material:1.2.0-alpha03'
+    implementation 'com.google.android.material:material:1.2.0-alpha04'
 
     /*retrofit*/
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
@@ -39,6 +39,9 @@ dependencies {
 
     /*glide*/
     implementation 'com.github.bumptech.glide:glide:4.8.0'
+
+    /*circle image view*/
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     /*mockito*/
     testImplementation 'org.mockito:mockito-core:1.10.19'
